@@ -96,7 +96,7 @@ resource "azurerm_network_interface" "Eth1" {
 		name = "ipconfig2"
 		private_ip_address = local.Eth1IpAddresses[1]
 		private_ip_address_allocation = "Static"
-		subnet_id = module.vnet.PrivateSubnet.id
+		subnet_id = local.Eth1SubnetId
 		primary = "false"
 		private_ip_address_version = "IPv4"
 	}
@@ -104,7 +104,7 @@ resource "azurerm_network_interface" "Eth1" {
 		name = "ipconfig3"
 		private_ip_address = local.Eth1IpAddresses[2]
 		private_ip_address_allocation = "Static"
-		subnet_id = module.vnet.PrivateSubnet.id
+		subnet_id = local.Eth1SubnetId
 		primary = "false"
 		private_ip_address_version = "IPv4"
 	}
@@ -112,7 +112,7 @@ resource "azurerm_network_interface" "Eth1" {
 		name = "ipconfig4"
 		private_ip_address = local.Eth1IpAddresses[3]
 		private_ip_address_allocation = "Static"
-		subnet_id = module.vnet.PrivateSubnet.id
+		subnet_id = local.Eth1SubnetId
 		primary = "false"
 		private_ip_address_version = "IPv4"
 	}
@@ -120,7 +120,7 @@ resource "azurerm_network_interface" "Eth1" {
 		name = "ipconfig5"
 		private_ip_address = local.Eth1IpAddresses[4]
 		private_ip_address_allocation = "Static"
-		subnet_id = module.vnet.PrivateSubnet.id
+		subnet_id = local.Eth1SubnetId
 		primary = "false"
 		private_ip_address_version = "IPv4"
 	}
@@ -128,7 +128,7 @@ resource "azurerm_network_interface" "Eth1" {
 		name = "ipconfig6"
 		private_ip_address = local.Eth1IpAddresses[5]
 		private_ip_address_allocation = "Static"
-		subnet_id = module.vnet.PrivateSubnet.id
+		subnet_id = local.Eth1SubnetId
 		primary = "false"
 		private_ip_address_version = "IPv4"
 	}
@@ -136,7 +136,7 @@ resource "azurerm_network_interface" "Eth1" {
 		name = "ipconfig7"
 		private_ip_address = local.Eth1IpAddresses[6]
 		private_ip_address_allocation = "Static"
-		subnet_id = module.vnet.PrivateSubnet.id
+		subnet_id = local.Eth1SubnetId
 		primary = "false"
 		private_ip_address_version = "IPv4"
 	}
@@ -144,7 +144,7 @@ resource "azurerm_network_interface" "Eth1" {
 		name = "ipconfig8"
 		private_ip_address = local.Eth1IpAddresses[7]
 		private_ip_address_allocation = "Static"
-		subnet_id = module.vnet.PrivateSubnet.id
+		subnet_id = local.Eth1SubnetId
 		primary = "false"
 		private_ip_address_version = "IPv4"
 	}
@@ -152,7 +152,7 @@ resource "azurerm_network_interface" "Eth1" {
 		name = "ipconfig9"
 		private_ip_address = local.Eth1IpAddresses[8]
 		private_ip_address_allocation = "Static"
-		subnet_id = module.vnet.PrivateSubnet.id
+		subnet_id = local.Eth1SubnetId
 		primary = "false"
 		private_ip_address_version = "IPv4"
 	}
@@ -160,7 +160,7 @@ resource "azurerm_network_interface" "Eth1" {
 		name = "ipconfigA"
 		private_ip_address = local.Eth1IpAddresses[9]
 		private_ip_address_allocation = "Static"
-		subnet_id = module.vnet.PrivateSubnet.id
+		subnet_id = local.Eth1SubnetId
 		primary = "false"
 		private_ip_address_version = "IPv4"
 	}
