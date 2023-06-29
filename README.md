@@ -1,1 +1,1 @@
-# terraform-azurerm-module-ixnetwork-agent
+# module-ixnetwork-agent/azurerm
