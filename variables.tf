@@ -24,6 +24,7 @@ variable "Eth0IpAddress" {
 }
 
 variable "Eth0SubnetId" {
+	description = "Id of the subnet associated with the first network interface"
 	type = string
 }
 
@@ -33,6 +34,7 @@ variable "Eth1IpAddresses" {
 }
 
 variable "Eth1SubnetId" {
+	description = "Id of the subnet associated with the second network interface"
 	type = string
 }
 
@@ -50,6 +52,7 @@ variable "ImageVersion" {
 
 variable "InstanceId" {
 	default = "agent"
+	description = "Id of the instance of this module that ensures uniqueness"
 	type = string
 }
 
@@ -80,21 +83,39 @@ variable "SshKeyName" {
 
 variable "Tag" {
 	default = "ixnetwork"
+	description = "App ID tag of application using the deployment"
 	type = string
 }
 
 variable "UserEmailTag" {
+	default = "terraform@example.com"
 	description = "Email address tag of user creating the deployment"
 	type = string
+	validation {
+		condition = length(var.UserEmailTag) >= 14
+		error_message = "UserEmailTag minimum length must be >= 14."
+	}
 }
 
 variable "UserLoginTag" {
+	default = "terraform"
 	description = "Login ID tag of user creating the deployment"
 	type = string
+	validation {
+		condition = length(var.UserLoginTag) >= 4
+		error_message = "UserLoginTag minimum length must be >= 4."
+	}
 }
 
 variable "UserProjectTag" {
-	default = "cloud-ist"
+	default = "module"
+	description = "Project tag of user creating the deployment"
+	type = string
+}
+
+variable "Version" {
+	default = "9-36"
+	description = "Versioning of the application using the deployment"
 	type = string
 }
 
