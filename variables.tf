@@ -1,25 +1,30 @@
 variable "AdminUserName" {
 	default = "azure"
+	description = "Id of the VM administrator account"
 	type = string
 }
 
 variable "DisablePasswordAuthentication" {
 	default = true
+	description = "Disable SSH password auth in favor of key-based auth"
 	type = bool
 }
 
 variable "EnableAcceleratedNetworking" {
 	default = false
+	description = "Enables SR-IOV on supported VMs to improve networking performance"
 	type = bool
 }
 
 variable "EnableIpForwarding" {
 	default = true
+	description = "Enables forwarding of network traffic to an address not assigned to VM"
 	type = bool
 }
 
 variable "Eth0IpAddress" {
 	default = "10.0.10.11"
+	description = "Private ip address associated with the first network interface"
 	type = string
 }
 
@@ -30,6 +35,7 @@ variable "Eth0SubnetId" {
 
 variable "Eth1IpAddresses" {
 	default = ["10.0.2.12", "10.0.2.13", "10.0.2.14", "10.0.2.15", "10.0.2.16", "10.0.2.17", "10.0.2.18", "10.0.2.19", "10.0.2.20", "10.0.2.21"]
+	description = "Private ip addresses associated with the second network interface"
 	type = list(string)
 }
 
@@ -45,7 +51,7 @@ variable "ImageSku" {
 }
 
 variable "ImageVersion" {
-	default = "latest"
+	default = "9.36.0"
 	description = "The version number of an image SKU."
 	type = string
 }
@@ -70,14 +76,17 @@ variable "MarketplaceImagePublisherId" {
 
 variable "ResourceGroupLocation" {
 	default = "East US"
+	description = "Location of container metadata and control plane operations"
 	type = string
 }
 
 variable "ResourceGroupName" {
+	description = "Id of container that holds related resources that you want to manage together"
 	type = string
 }
 
 variable "SshKeyName" {
+	description = "Id associated with SSH key pair used for authentication"
 	type = string
 }
 
@@ -121,6 +130,7 @@ variable "Version" {
 
 variable "VmSize" {
 	default = "Standard_F8s_v2"
+	description = "Category, series and instance specifications associated with the VM"
 	type = string
 	validation {
 		condition = contains([	"Standard_F4s_v2",	"Standard_F8s_v2",	"Standard_F16s_v2"
