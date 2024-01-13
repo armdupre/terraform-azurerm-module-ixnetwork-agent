@@ -42,7 +42,7 @@ resource "azurerm_linux_virtual_machine" "Instance" {
 		azurerm_network_interface.Eth1
 	]
 	timeouts {
-		create = "5m"
+		create = "9m"
 		delete = "10m"
 	}
 }
