@@ -51,7 +51,7 @@ variable "ImageSku" {
 }
 
 variable "ImageVersion" {
-	default = "10.00.1"
+	default = "10.00.2"
 	description = "The version number of an image SKU."
 	type = string
 }
