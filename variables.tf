@@ -38,6 +38,17 @@ variable "Eth1SubnetId" {
 	type = string
 }
 
+variable "Eth2IpAddresses" {
+	default = ["10.0.3.12", "10.0.3.13", "10.0.3.14", "10.0.3.15", "10.0.3.16", "10.0.3.17", "10.0.3.18", "10.0.3.19", "10.0.3.20", "10.0.3.21"]
+	description = "Private ip addresses associated with the second network interface"
+	type = list(string)
+}
+
+variable "Eth1SubnetId" {
+	description = "Id of the subnet associated with the second network interface"
+	type = string
+}
+
 variable "ImageSku" {
 	default = "keysight-ixnetwork-virtual-test-appliance-11-00"
 	description = "An instance of an offer, such as a major release of a distribution."
