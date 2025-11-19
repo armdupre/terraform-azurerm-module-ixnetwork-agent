@@ -76,6 +76,101 @@ resource "azurerm_network_interface" "Eth0" {
 	]
 }
 
+resource "azurerm_network_interface" "Eth1" {
+	name = local.Eth1Name
+	location = local.ResourceGroupLocation
+	resource_group_name = local.ResourceGroupName
+	tags = {
+		Owner = local.UserEmailTag
+		Project = local.UserProjectTag
+		ResourceGroup = local.ResourceGroupName
+		Location = local.ResourceGroupLocation
+	}
+	ip_configuration {
+		name = "ipconfig1"
+		private_ip_address = local.Eth1IpAddresses[0]
+		private_ip_address_allocation = "Static"
+		subnet_id = local.Eth1SubnetId
+		primary = "true"
+		private_ip_address_version = "IPv4"
+	}
+	ip_configuration {
+		name = "ipconfig2"
+		private_ip_address = local.Eth1IpAddresses[1]
+		private_ip_address_allocation = "Static"
+		subnet_id = local.Eth1SubnetId
+		primary = "false"
+		private_ip_address_version = "IPv4"
+	}
+	ip_configuration {
+		name = "ipconfig3"
+		private_ip_address = local.Eth1IpAddresses[2]
+		private_ip_address_allocation = "Static"
+		subnet_id = local.Eth1SubnetId
+		primary = "false"
+		private_ip_address_version = "IPv4"
+	}
+	ip_configuration {
+		name = "ipconfig4"
+		private_ip_address = local.Eth1IpAddresses[3]
+		private_ip_address_allocation = "Static"
+		subnet_id = local.Eth1SubnetId
+		primary = "false"
+		private_ip_address_version = "IPv4"
+	}
+	ip_configuration {
+		name = "ipconfig5"
+		private_ip_address = local.Eth1IpAddresses[4]
+		private_ip_address_allocation = "Static"
+		subnet_id = local.Eth1SubnetId
+		primary = "false"
+		private_ip_address_version = "IPv4"
+	}
+	ip_configuration {
+		name = "ipconfig6"
+		private_ip_address = local.Eth1IpAddresses[5]
+		private_ip_address_allocation = "Static"
+		subnet_id = local.Eth1SubnetId
+		primary = "false"
+		private_ip_address_version = "IPv4"
+	}
+	ip_configuration {
+		name = "ipconfig7"
+		private_ip_address = local.Eth1IpAddresses[6]
+		private_ip_address_allocation = "Static"
+		subnet_id = local.Eth1SubnetId
+		primary = "false"
+		private_ip_address_version = "IPv4"
+	}
+	ip_configuration {
+		name = "ipconfig8"
+		private_ip_address = local.Eth1IpAddresses[7]
+		private_ip_address_allocation = "Static"
+		subnet_id = local.Eth1SubnetId
+		primary = "false"
+		private_ip_address_version = "IPv4"
+	}
+	ip_configuration {
+		name = "ipconfig9"
+		private_ip_address = local.Eth1IpAddresses[8]
+		private_ip_address_allocation = "Static"
+		subnet_id = local.Eth1SubnetId
+		primary = "false"
+		private_ip_address_version = "IPv4"
+	}
+	ip_configuration {
+		name = "ipconfigA"
+		private_ip_address = local.Eth1IpAddresses[9]
+		private_ip_address_allocation = "Static"
+		subnet_id = local.Eth1SubnetId
+		primary = "false"
+		private_ip_address_version = "IPv4"
+	}
+	dns_servers = []
+	accelerated_networking_enabled = local.EnableAcceleratedNetworking
+	ip_forwarding_enabled = local.EnableIpForwarding
+}
+
 resource "azurerm_network_interface" "Eth2" {
 	name = local.Eth2Name
 	location = local.ResourceGroupLocation
