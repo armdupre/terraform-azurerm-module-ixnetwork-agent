@@ -11,7 +11,8 @@ This module creates a single instance having two network interfaces.
 module "Agent" {
 	source  = "git::https://github.com/armdupre/terraform-azurerm-module-ixnetwork-agent.git"
 	Eth0SubnetId = module.Vnet.PublicSubnet.id
-	Eth1SubnetId = module.Vnet.PrivateSubnet.id
+	Eth1SubnetId = module.Vnet.Private1Subnet.id
+	Eth1SubnetId = module.Vnet.Private2Subnet.id
 	ResourceGroupName = azurerm_resource_group.ResourceGroup.name
 	SshKeyName = azurerm_ssh_public_key.SshKey.name
 }
